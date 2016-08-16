@@ -16,4 +16,4 @@ for i in range(math.ceil(len(digits.data)/2)):
         Success += 1
 
 Accuracy = (Success / (math.ceil(len(digits.data)/2))) * 100
-Print(Accuracy, "%")
+print(Accuracy, "%")

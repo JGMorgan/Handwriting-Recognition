@@ -1,11 +1,14 @@
-import matplotlib.pyplot as plt
-
+import math
+import warnings
 from sklearn import datasets
 from sklearn.neighbors import KNeighborsClassifier
 
+warnings.filterwarnings("ignore")
 knn = KNeighborsClassifier()
 digits = datasets.load_digits()
 
-for digit in digits.target:
-    print(digit)
+knn.fit(digits.data[:len(digits.data)/2], digits.target[:len(digits.target)/2])
+
+for i in range(math.ceil(len(digits.data)/2)):
+    print(knn.predict(digits.data[i + len(digits.data)/2]), digits.target[i + len(digits.data)/2])
 
